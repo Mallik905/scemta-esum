@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="authenticate_url">http://10.10.10.119:3000/users/authenticate</string>
-
+    <string name="sessionstart_url">http://10.10.10.119:3000/users/sessionstart</string>
 
 </resources>
