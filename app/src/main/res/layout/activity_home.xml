@@ -9,20 +9,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/atmecslogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.3"
+            android:src="@drawable/muse_logo" />
+
         <TextView
+            android:layout_alignParentTop="true"
             android:id="@+id/text_Welcome_muse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="WELCOME TO MUSE "
-            android:textSize="45dp" />
+            android:textColorHighlight="#000000"
+            android:textSize="40dp" />
 
         <Button
             android:id="@+id/button_to_muse"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/text_Welcome_muse"
-            android:layout_marginBottom="-260dp"
-            android:text="Click to open muse monitor" />
+          android:layout_alignBottom="@id/atmecslogo"
+
+            android:text="Click to open muse monitor"
+            android:textSize="26dp"
+            android:textColor="#ff0000"/>
 
 
 
