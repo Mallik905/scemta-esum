@@ -368,6 +368,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         if (res.has("username")) {
 
             Intent launchHomeActivity = new Intent(LoginActivity.this,HomeActivity.class);
+            int empid = Integer.parseInt(res.getString("username"));
+            launchHomeActivity.putExtra("empId",empid);
             startActivity(launchHomeActivity);
         }
         else if(res.has("message")){
