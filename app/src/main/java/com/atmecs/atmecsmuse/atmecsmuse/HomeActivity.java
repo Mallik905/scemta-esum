@@ -19,14 +19,15 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final int empId = getIntent().getIntExtra("empId", 0);
         setContentView(R.layout.activity_home);
         Button Button_muse_monitor =(Button) findViewById(R.id.button_to_muse);
         Button_muse_monitor.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-
-                requestSessionStart(29);
+                System.out.println("EMP ID:"+empId);
+                requestSessionStart(empId);
             }
         });
 
