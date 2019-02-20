@@ -321,10 +321,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * the user.
      */
     public void requestAuthenticate(String eid, String pwd){
-        Toast.makeText(context,"requesting ", Toast.LENGTH_SHORT).show();
+
         try {
 
-            String url = "http://10.10.10.119:3000/users/authenticate";
+            String url = getString(R.string.authenticate_url);
             JSONObject reqBody = new JSONObject();
             reqBody.put("username",eid);
             reqBody.put("password",pwd);
@@ -335,7 +335,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         @Override
                         public void onResponse(JSONObject response) {
                             try {
-                                Toast.makeText(getApplicationContext(),"Got Response", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(getApplicationContext(),"Got Response", Toast.LENGTH_SHORT).show();
                                 onResponseOfAuthenticate(response);
                             }
                             catch (JSONException e){}
@@ -344,7 +344,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            // TODO: Handle error
+
                             System.out.println(error.toString());
                             Toast.makeText(getApplicationContext(),"HTTP Response Error", Toast.LENGTH_SHORT).show();
                             showProgress(false);
@@ -364,9 +364,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
     public void onResponseOfAuthenticate(JSONObject res) throws JSONException{
         showProgress(false);
-
+        System.out.println("Response: "+res.toString());
         if (res.has("username")) {
-            //finish();   // todo
 
             Intent launchHomeActivity = new Intent(LoginActivity.this,HomeActivity.class);
             startActivity(launchHomeActivity);
@@ -420,11 +419,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 // Simulate network access.
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
-                try {
-                    return new JSONObject().put("message", e.getMessage());
-                } catch (JSONException e1) {
-
-                }
 
             } catch (JSONException e) {
                 e.printStackTrace();
