@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
         try {
             String url = getString(R.string.sessionstart_url);
             JSONObject reqBody = new JSONObject();
-            reqBody.put("username",eid);
+            reqBody.put("empId",eid);
             System.out.println(reqBody.toString());
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                     (Request.Method.POST, url, reqBody, new Response.Listener<JSONObject>() {
