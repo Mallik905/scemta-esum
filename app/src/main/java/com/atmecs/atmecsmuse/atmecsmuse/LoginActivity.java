@@ -231,8 +231,8 @@ public class LoginActivity extends AppCompatActivity {
 
             String url = getString(R.string.authenticate_url);
             JSONObject reqBody = new JSONObject();
-            reqBody.put("empId",eid);
-            reqBody.put("password",pwd);
+            reqBody.put("EmpId",eid);
+            reqBody.put("Password",pwd);
             System.out.println(reqBody.toString());
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                     (Request.Method.POST, url, reqBody, new Response.Listener<JSONObject>() {
@@ -270,11 +270,11 @@ public class LoginActivity extends AppCompatActivity {
     public void onResponseOfAuthenticate(JSONObject res) throws JSONException{
         showProgress(false);
         System.out.println("Response: "+res.toString());
-        if (res.has("empId")) {
+        if (res.has("EmpId")) {
 
             Intent launchHomeActivity = new Intent(LoginActivity.this,HomeActivity.class);
-            int empid = Integer.parseInt(res.getString("empId"));
-            launchHomeActivity.putExtra("empId",empid);
+            int empid = Integer.parseInt(res.getString("EmpId"));
+            launchHomeActivity.putExtra("EmpId",empid);
             startActivity(launchHomeActivity);
         }
         else if(res.has("message")){

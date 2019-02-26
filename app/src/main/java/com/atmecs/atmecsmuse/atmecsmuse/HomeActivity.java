@@ -19,7 +19,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final int empId = getIntent().getIntExtra("empId", 0);
+        final int empId = getIntent().getIntExtra("EmpId", 0);
         setContentView(R.layout.activity_home);
         Button Button_muse_monitor =(Button) findViewById(R.id.button_to_muse);
         Button_muse_monitor.setOnClickListener(new View.OnClickListener() {
@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
         try {
             String url = getString(R.string.sessionstart_url);
             JSONObject reqBody = new JSONObject();
-            reqBody.put("empId",eid);
+            reqBody.put("EmpId",eid);
             System.out.println(reqBody.toString());
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                     (Request.Method.POST, url, reqBody, new Response.Listener<JSONObject>() {
