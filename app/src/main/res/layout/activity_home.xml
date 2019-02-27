@@ -16,24 +16,118 @@
             android:alpha="0.3"
             android:src="@drawable/muse_logo" />
 
-        <TextView
-            android:layout_alignParentTop="true"
-            android:id="@+id/text_Welcome_muse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="WELCOME TO MUSE "
-            android:textColorHighlight="#000000"
-            android:textSize="40dp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_alignParentTop="true"
+                android:id="@+id/text_Welcome_muse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_msg"
+                android:textColorHighlight="#000000"
+                android:textSize="20sp"
+                android:gravity="center_horizontal"
+                />
+        <Spinner
+            android:id="@+id/muses_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <Button
+                android:id="@+id/refresh"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="@string/refresh"
+                android:layout_weight="1"
+                android:textColor="@android:color/white"
+                android:background="@drawable/change_color"/>
+            <Button
+                android:id="@+id/connect"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="@string/connect"
+                android:layout_weight="1"
+                android:textColor="@android:color/white"
+                android:background="@drawable/change_color"/>
+<!--            <Button
+                android:id="@+id/disconnect"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:text="@string/disconnect" />-->
+        </LinearLayout>
+        <TextView
+            android:id="@+id/hint_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/status"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="40sp"/>
+        <TextView
+            android:id="@+id/con_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:text="@string/undefined"
+            android:visibility="gone"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/elem1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:text="@string/init_val" />
+                <TextView
+                    android:id="@+id/elem2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:text="@string/init_val" />
+                <TextView
+                    android:id="@+id/elem3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:text="@string/init_val" />
+                <TextView
+                    android:id="@+id/elem4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:text="@string/init_val" />
+            </LinearLayout>
+        </LinearLayout>
         <Button
             android:id="@+id/button_to_muse"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
           android:layout_alignBottom="@id/atmecslogo"
-
-            android:text="Click to open muse monitor"
+            android:foregroundGravity="center_horizontal"
+            android:text="@string/calmness_button_text"
             android:textSize="26dp"
-            android:textColor="#ff0000"/>
+            android:textColor="@android:color/white"
+            android:background="@drawable/change_color"/>
 
 
 

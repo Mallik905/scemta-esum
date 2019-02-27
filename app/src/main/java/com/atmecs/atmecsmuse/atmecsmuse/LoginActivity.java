@@ -3,6 +3,7 @@ package com.atmecs.atmecsmuse.atmecsmuse;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
@@ -26,6 +27,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -171,6 +173,18 @@ public class LoginActivity extends AppCompatActivity {
 //            mAuthTask.execute((Void) null);
             requestAuthenticate(email,password);
             //Toast.makeText(getApplicationContext(),"request", Toast.LENGTH_SHORT).show();
+            try{
+//                // Check if no view has focus:
+//                View view = this.getCurrentFocus();
+//                if (view != null) {
+//                    InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+//                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+//                }
+                InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
         }
     }
 
@@ -276,6 +290,7 @@ public class LoginActivity extends AppCompatActivity {
             int empid = Integer.parseInt(res.getString("EmpId"));
             launchHomeActivity.putExtra("EmpId",empid);
             startActivity(launchHomeActivity);
+            finish();
         }
         else if(res.has("message")){
             mPasswordView.setError(res.getString("message"));

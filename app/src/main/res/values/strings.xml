@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">Atmecs Muse</string>
-    <string name="appname">MUSE HOME</string>
+    <string name="app_name">Atmecs Calmness Index</string>
+    <!--<string name="appname">MUSE HOME</string>-->
+    <string name="login_text">Enter your EmployeeId and Password to Sign In</string>
+    <string name="welcome_msg">Welcome to ATMECS Calmness Index</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Employee ID</string>
     <string name="prompt_password">Password</string>
@@ -11,9 +13,33 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
-    <string name="muse_monitor_package">com.sonicPenguins.museMonitor</string>
 
+    <string name="muse_monitor_package">com.sonicPenguins.museMonitor</string>
+    <string name="connect">Connect</string>
+    <string name="status">Click on Refresh to load Muse Headbands</string>
+    <string name="status1">Select and Connect appropriate Muse Headband</string>
+    <string name="status2">Connected, please wear your headband as per instructions</string>
+    <string name="status3">Sensors issue, please adjust/tight your headband</string>
+    <string name="status4">You are all set for calmness session</string>
+    <string name="status5">Muse band is not available to connect, power on Muse and click Refresh</string>
+    <string name="status6">Connecting to Muse...</string>
+    <string name="status7">Disconnected, click on Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="refresh">Refresh</string>
+    <string name="undefined">Band status - unknown</string>
+    <string name="calmness_button_text">Launch Calmness Session</string>
+
+    <string name="init_val">0.0</string>
+    <string name="eeg">EEG data:</string>
+    <string name="accel">Accelerometer Data:</string>
+    <string name="version">Version:</string>
+    <string name="artifacts">Blinks, Jaw: </string>
+    <string name="msg_count">Msg number, size: </string>
+    <string name="pause">Pause/Resume</string>
+    <string name="drop">Drop</string>
+    <string name="muse_elem">Sensor Values:</string>
+
+    <string name="permission_dialog_title">Muse Needs Your Permission</string>
+    <string name="permission_dialog_description">Muse needs a few permissions to work properly. On the next screens, tap "Allow" to proceed. If you deny, Muse will not work properly until you go into your Android settings and allow.</string>
+    <string name="permission_dialog_understand">I Understand</string>
 </resources>
